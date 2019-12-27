@@ -1,6 +1,6 @@
 # Image of the App "I Know Everything"
 
-<img src="images/Example_Question_Answer.png">
+<img src="images/Example_Question_Answer.PNG">
 
 # Model used BERT-Large Uncased
 
