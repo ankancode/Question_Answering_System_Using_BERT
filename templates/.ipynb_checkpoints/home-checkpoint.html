@@ -1,0 +1,64 @@
+<html>
+   <head>
+		<title>I Know Everything</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='custom.css' rel='stylesheet' type='text/css'>
+   </head>
+
+
+   <body>
+		<div class="container">
+			<div style="margin-top:60px"></div>
+			<div class="row">
+				<h2 style="color:Green;font-weight:bold;font-size:40px;"> I Know Everything </h2>
+			</div>
+			<div style="margin-top:50px"></div>
+		    <form action = "http://localhost:5000/" method = "POST">
+		        <div class="row">
+		                <div class="col-md-8">
+		                    <div class="form-group form-group-sm">
+		                        <label for="Question" class="control-label" style="color:DarkBlue;font-weight:bold;font-size:30px;">Question :</label>
+		                        <input type="text" class="form-control" id="Question" name = "Question" placeholder="Ask me anything" required="true">
+		                    </div>
+		                </div>
+		        </div>
+
+		        <div style="margin-top:20px"></div>
+		        <div class="row">
+		             <div class="col-xs-3">
+		                    <button type="submit" class="btn btn-primary">Answer Me</button>
+		                </div>
+		        </div>
+		    </form>
+            
+            
+            <div style="margin-top:60px"></div>
+            <div class="row">
+		                <div class="col-md-8">
+		                    <div class="form-group form-group-sm">
+                                {% if result %}
+		                        <label for="Answer" class="control-label" style="color:DarkBlue;font-weight:bold;font-size:30px;">Answer :</label>
+                                
+                                <p class="text-success" style="color:Green;font-size:20px;">{{ result }}</p>
+                                {% endif %}
+		                    </div>
+		                </div>
+		      </div>
+            
+		    {% with messages = get_flashed_messages() %}
+			  {% if messages %}
+			    <ul class=flashes>
+			    {% for message in messages %}
+			      <li style="color:Red">{{ message }}</li>
+			    {% endfor %}
+			    </ul>
+			  {% endif %}
+			{% endwith %}
+            
+
+		</div>
+	</body>
+</html>
