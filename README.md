@@ -1,3 +1,7 @@
+# Image of the App "I Know Everything"
+
+<img src="images/Example_Question_Answer.png">
+
 # Model used BERT-Large Uncased
 
 Pre-Trained on SQuAD Dataset. 
